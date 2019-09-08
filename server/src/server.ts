@@ -244,9 +244,9 @@ connection.onDocumentSymbol(
 		let text = doc.getText();
 
 		// Find all patterns
-		let patternClass = /CLASS\("(.+)".*,/g;
-		let patternMethod = /METHOD\("(.+)"/g; // METHOD("abc") or STATIC_METHOD("abc")
-		let patternVariable = /VARIABLE.*\("(.+)"/g; // VARIABLE("abc") or VARIABLE_ATTR("abc") or STATIC_VARIABLE("abc")
+		let patternClass = /CLASS\("(\w+)".*,/g;
+		let patternMethod = /METHOD\("(\w+)"\)/g; // METHOD("abc") or STATIC_METHOD("abc")
+		let patternVariable = /VARIABLE.*\("(\w+)"/g; // VARIABLE("abc") or VARIABLE_ATTR("abc") or STATIC_VARIABLE("abc")
 		let retArray : SymbolInformation[] = [];
 	
 		pushSymbols(text, patternClass, SymbolKind.Class, retArray, doc, uri);
