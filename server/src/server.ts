@@ -245,7 +245,7 @@ connection.onDocumentSymbol(
 
 		// Find all patterns
 		let patternClass = /CLASS\("(\w+)".*,/g;
-		let patternMethod = /METHOD\("(\w+)"\)/g; // METHOD("abc") or STATIC_METHOD("abc")
+		let patternMethod = /METHOD\((\w+)\)/g; // METHOD("abc") or STATIC_METHOD("abc")
 		let patternVariable = /VARIABLE.*\("(\w+)"/g; // VARIABLE("abc") or VARIABLE_ATTR("abc") or STATIC_VARIABLE("abc")
 		let retArray : SymbolInformation[] = [];
 	
